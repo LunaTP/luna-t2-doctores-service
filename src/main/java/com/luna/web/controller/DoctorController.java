@@ -21,6 +21,8 @@ public class DoctorController {
     public ResponseEntity<DoctorResponseDto> getById(@PathVariable Long id,
                                                      @AuthenticationPrincipal Jwt jwt){
         String clientId = jwt.getClaimAsString("clientId");
+        System.out.println("JWT CLAIMS:");
+        jwt.getClaims().forEach((k, v) -> System.out.println(k + " = " + v));
         return ResponseEntity.ok(doctorService.getById(id));
     }
 }
