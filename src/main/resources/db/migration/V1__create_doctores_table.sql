@@ -1,0 +1,6 @@
+CREATE TABLE doctores (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    especialidad VARCHAR(255) NOT NULL,
+    estado VARCHAR(50) NOT NULL
+);

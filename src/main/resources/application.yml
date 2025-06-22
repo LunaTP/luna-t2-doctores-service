@@ -1,0 +1,35 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: luna-t2-doctores-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/bd_luna_ms_doctores
+    username: root
+    password: 12345678
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          secret-key: MiSuperClaveSegura1234567890!@#$
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
